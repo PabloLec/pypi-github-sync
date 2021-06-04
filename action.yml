@@ -18,7 +18,6 @@ inputs:
   upload_repo:
     description: Repo to upload to with twine, defaults to main PyPI repo
     required: false
-    defaults: 'https://pypi.org/'
   verify_metadata:
     description: Verify build metadata before publication, defaults to false
     required: false

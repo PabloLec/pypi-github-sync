@@ -42,7 +42,10 @@ python setup.py sdist bdist_wheel
 
 echo "---------------- PUBLISH PACKAGE ----------------"
 
-echo "-------- Using repository: ${UPLOAD_REPO}"
+if [[ -z "${UPLOAD_REPO}" ]]; then
+    EXTRA_ARGS="--repository-url ${UPLOAD_REPO} ${EXTRA_ARGS}"
+    echo "-------- Using repository: ${UPLOAD_REPO}"
+fi
 
 if [[ ${VERIFY_METADATA} != "false" ]] ; then
     twine check dist/*
@@ -57,4 +60,4 @@ if [[ ${VERBOSE} != "false" ]] ; then
     EXTRA_ARGS="--verbose ${EXTRA_ARGS}"
 fi
 
-python -m twine upload --repository-url ${UPLOAD_REPO} dist/* -u ${TWINE_USERNAME} -p ${TWINE_PASSWORD} ${EXTRA_ARGS}
+python -m twine upload dist/* -u ${TWINE_USERNAME} -p ${TWINE_PASSWORD} ${EXTRA_ARGS}
