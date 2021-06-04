@@ -42,6 +42,8 @@ python setup.py sdist bdist_wheel
 
 echo "---------------- PUBLISH PACKAGE ----------------"
 
+EXTRA_ARGS=
+
 if [[ -z "${UPLOAD_REPO}" ]]; then
     EXTRA_ARGS="--repository-url ${UPLOAD_REPO} ${EXTRA_ARGS}"
     echo "-------- Using repository: ${UPLOAD_REPO}"
@@ -51,7 +53,6 @@ if [[ ${VERIFY_METADATA} != "false" ]] ; then
     twine check dist/*
 fi
 
-EXTRA_ARGS=
 if [[ ${SKIP_EXISTING} != "false" ]] ; then
     EXTRA_ARGS=--skip-existing
 fi
