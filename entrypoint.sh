@@ -42,7 +42,7 @@ python setup.py sdist bdist_wheel
 
 echo "---------------- PUBLISH PACKAGE ----------------"
 
-echo "Using repository: ${UPLOAD_REPO}"
+echo "-------- Using repository: ${UPLOAD_REPO}"
 
 if [[ ${VERIFY_METADATA} != "false" ]] ; then
     twine check dist/*
