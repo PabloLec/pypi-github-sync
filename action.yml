@@ -1,0 +1,45 @@
+name: pypi-github-sync
+description: "Sync a PyPI package with Github release"
+author: Pablo Lecolinet
+branding:
+  color: green
+  icon: send
+inputs:
+  github_repo:
+    description: GitHub repo name with format USERNAME/REPO
+    required: true
+  twine_username:
+    description: Your PyPI username (use your GitHub repo secrets)
+    required: true
+  twine_password:
+    description: Your PyPI password (use your GitHub repo secrets)
+    required: true
+
+  upload_repo:
+    description: Repo to upload to with twine, defaults to main PyPI repo
+    required: false
+    defaults: https://pypi.org/
+  verify_metadata:
+    description: Verify build metadata before publication, defaults to false
+    required: false
+    defaults: false
+  skip_existing:
+    description: Do not raise an error if version already exists on repo, defaults to false
+    required: false
+    defaults: false
+  verbose:
+    description: Verbose output for twine upload, defaults to false
+    required: false
+    defaults: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.github_repo }}
+    - ${{ inputs.twine_username }}
+    - ${{ inputs.twine_password }}
+    - ${{ inputs.upload_repo }}
+    - ${{ inputs.verify_metadata }}
+    - ${{ inputs.skip_existing }}
+    - ${{ inputs.verbose }}
