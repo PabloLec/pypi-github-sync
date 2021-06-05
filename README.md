@@ -1,6 +1,6 @@
 # pypi-github-sync [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pablolec/pypi-github-sync)](https://github.com/PabloLec/pypi-github-sync/releases/) [![GitHub](https://img.shields.io/github/license/pablolec/pypi-github-sync)](https://github.com/PabloLec/pypi-github-sync/blob/main/LICENCE) 
 
-This action allows you to upload your Python distribution package to PyPI automatically using latest GitHub version tag as release version.
+This action allows you to upload your Python package to PyPI automatically using latest GitHub version tag as release version.
 
 ## How does it work?
 
