@@ -44,7 +44,7 @@ echo "---------------- PUBLISH PACKAGE ----------------"
 
 EXTRA_ARGS=
 
-if [[ -z "${UPLOAD_REPO}" ]]; then
+if [[ -n "${UPLOAD_REPO}" ]]; then
     EXTRA_ARGS="--repository-url ${UPLOAD_REPO} ${EXTRA_ARGS}"
     echo "-------- Using repository: ${UPLOAD_REPO}"
 fi
