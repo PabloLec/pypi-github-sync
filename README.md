@@ -44,11 +44,11 @@ Your github repository with format `USERNAME/REPO` as in URLs. For example this 
 
 #### `twine_username` *mandatory*
 
-Your PyPI username, add it to your [repository secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+Your PyPI username, add `TWINE_USERNAME` to your [repository secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 #### `twine_password` *mandatory*
 
-Your PyPI password, add it to your [repository secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+Your PyPI password, add `TWINE_PASSWORD` to your [repository secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 #### `upload_repo` *optional*
 
