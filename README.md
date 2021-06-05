@@ -34,7 +34,7 @@ Mandatory parameters are:
 
 You will need to change `YOUR_USERNAME` and `YOUR_REPO` values and set your PyPI username and password in your repository secrets ([See the docs for reference](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository)).
 
-See [EXAMPLE.yml](EXAMPLE.yml) for a real world example.
+:arrow_right_hook: See [EXAMPLE.yml](EXAMPLE.yml) for a real world example.
 
 ## Inputs
 
