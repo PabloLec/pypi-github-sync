@@ -69,5 +69,5 @@ Verbose output for twine upload, defaults to false.
 ## Contributing
 
 Any contribution is welcome.  
-To report a bug or offer your help, simply open a new [issue](issues).  
+To report a bug or offer your help, simply open a new [issue](https://github.com/PabloLec/pypi-github-sync/issues).  
 You can also open an issue if you want a new feature to be implemented.
