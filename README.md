@@ -52,7 +52,7 @@ Your PyPI password, add it to your [repository secrets](https://docs.github.com/
 
 #### `upload_repo` *optional*
 
-The repository used for package uploading. Defaults to main PyPI repo, you can use others like PyPI test repo with `'https://test.pypi.org/legacy/'`.
+The repository used for package uploading. Defaults to main PyPI repo, you can use others like PyPI test repo with `https://test.pypi.org/legacy/`.
 
 #### `verify_metadata` *optional*
 

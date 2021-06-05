@@ -40,6 +40,10 @@ echo "---------------- BUILD PACKAGE ----------------"
 
 python setup.py sdist bdist_wheel
 
+if [[ ${VERIFY_METADATA} != "false" ]] ; then
+    twine check dist/*
+fi
+
 echo "---------------- PUBLISH PACKAGE ----------------"
 
 EXTRA_ARGS=
@@ -49,12 +53,8 @@ if [[ -n "${UPLOAD_REPO}" ]]; then
     echo "-------- Using repository: ${UPLOAD_REPO}"
 fi
 
-if [[ ${VERIFY_METADATA} != "false" ]] ; then
-    twine check dist/*
-fi
-
 if [[ ${SKIP_EXISTING} != "false" ]] ; then
-    EXTRA_ARGS=--skip-existing
+    EXTRA_ARGS="--skip-existing ${EXTRA_ARGS}"
 fi
 
 if [[ ${VERBOSE} != "false" ]] ; then
