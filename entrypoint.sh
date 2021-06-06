@@ -33,8 +33,18 @@ echo "Cleaned version name: ${CLEAN_VER}"
 
 VERSION_REGEX='version=\"[^"]\+\"'
 VERSION_REPLACE="version=\"${CLEAN_VER}\""
+VERSION_REGEX_WITH_SPACE='version\ =\ \"[^"]\+\"'
+VERSION_REPLACE_WITH_SPACE="version\ =\ \"${CLEAN_VER}\""
 
-sed -i -e "s/${VERSION_REGEX}/${VERSION_REPLACE}/g" setup.py
+if [[ -e setup.py ]]; then
+    sed -i -e "s/${VERSION_REGEX}/${VERSION_REPLACE}/g" setup.py
+    sed -i -e "s/${VERSION_REGEX_WITH_SPACE}/${VERSION_REPLACE_WITH_SPACE}/g" setup.py
+fi
+
+if [[ -e pyproject.toml ]]; then
+    sed -i -e "s/${VERSION_REGEX}/${VERSION_REPLACE}/g" pyproject.toml
+    sed -i -e "s/${VERSION_REGEX_WITH_SPACE}/${VERSION_REPLACE_WITH_SPACE}/g" pyproject.toml
+fi
 
 echo "---------------- BUILD PACKAGE ----------------"
 

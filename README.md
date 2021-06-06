@@ -4,11 +4,9 @@ This action allows you to upload your Python package to PyPI automatically using
 
 ## How does it work?
 
-Running a Docker container, this action will clone your repo, fetch its latest release tag, modify `setup.py`, build and finally push to PyPI.
+Running a Docker container, this action will clone your repo, fetch its latest release tag, modify `setup.py` and/or `pyproject.toml`, build and finally push to PyPI.
 
-It currently only support `setup.py`, see [Contributing](#Contributing) if you want other supported formats.
-
-Also, with current procedure your GitHub repo remains untouched. That means the version parameter in `setup.py` will not be modified and its value does not matter.  
+Also, with current procedure your GitHub repo remains untouched. That means the version parameter in your setup file will not be modified and its value does not matter.  
 You can leave a dummy value, for example:
 ``` Python
 setup(
@@ -25,7 +23,7 @@ In your GitHub repo, create a workflow file or append to an existing one. (e.g. 
 Mandatory parameters are:
 ``` yaml
 - name: pypi-github-sync
-  uses: PabloLec/pypi-github-sync@v1.0.0
+  uses: PabloLec/pypi-github-sync@v1.0.1
   with:
     github_repo: YOUR_USERNAME/YOUR_REPO
     twine_username: ${{ secrets.TWINE_USERNAME }}
