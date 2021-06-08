@@ -48,7 +48,12 @@ fi
 
 echo "---------------- BUILD PACKAGE ----------------"
 
-python setup.py sdist bdist_wheel
+if [[ -e pyproject.toml ]]; then
+    pip install -q build
+    python -m build
+elif [[ -e setup.py ]]; then
+    python setup.py sdist bdist_wheel
+fi
 
 if [[ ${VERIFY_METADATA} != "false" ]] ; then
     twine check dist/*
