@@ -21,15 +21,15 @@ inputs:
   verify_metadata:
     description: Verify build metadata before publication, defaults to false
     required: false
-    defaults: false
+    default: false
   skip_existing:
     description: Do not raise an error if version already exists on repo, defaults to false
     required: false
-    defaults: false
+    default: false
   verbose:
     description: Verbose output for twine upload, defaults to false
     required: false
-    defaults: false
+    default: false
 
 runs:
   using: "docker"
